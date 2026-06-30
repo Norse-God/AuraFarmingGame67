@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player_Attaced : MonoBehaviour
 {
     private float Damage = 25;
+    public Transform point;
 
     void Update()
     {
@@ -24,6 +25,7 @@ public class Player_Attaced : MonoBehaviour
             if (obj != null)
             {
                 obj.TakeDamage(Damage);
+                Debug.DrawLine(point.position, hit.point, Color.green);
             }
         }
 
@@ -32,3 +34,4 @@ public class Player_Attaced : MonoBehaviour
 
 }
 
+ 
