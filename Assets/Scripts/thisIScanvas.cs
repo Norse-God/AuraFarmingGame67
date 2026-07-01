@@ -43,6 +43,7 @@ public class thisIScanvas : MonoBehaviour
 
         // timeScale — это скорость времени в игре. 0 значит "время стоит":
         // персонаж замирает, анимации не идут. Так и получается паузf
+        Time.timeScale = 0f;
         ShowMenu();
 
         // Сначала запоминаем, каким был курсор, и только потом меняем его,
@@ -59,7 +60,7 @@ public class thisIScanvas : MonoBehaviour
     public void Resume()
     {
         IsPaused = false;
-
+        Time.timeScale = 1f;
         // Возвращаем 1 — обычную скорость времени, чтобы снять паузуwwwwww
         HideMenu();
 
@@ -72,6 +73,7 @@ public class thisIScanvas : MonoBehaviour
     {
         // Сначала снимаем паузу: если этого не сделать, новая сцена
         // загрузится с остановленным временем (timeScale остался бы 0)
+        Time.timeScale = 1f;
         Resume();
 
         // buildIndex — это номер текущей сцены. Загружаем её же заново —

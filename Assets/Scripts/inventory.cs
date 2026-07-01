@@ -9,6 +9,7 @@ public class inventory : MonoBehaviour
     public static bool IsPaused;
     // Сюда в инспекторе перетаскиваем объект меню (тёмный фон с кнопками),
     // чтобы скрипт знал, что именно показывать и прятать
+
     public GameObject menuRoot;
     public List<item> items = new();
     public List<InventorySlot> slots;
@@ -59,8 +60,8 @@ public class inventory : MonoBehaviour
         IsPaused = true;
 
         // timeScale — это скорость времени в игре. 0 значит "время стоит":
-        // персонаж замирает, анимации не идут. Так и получается паузf
         Time.timeScale = 0f;
+        // персонаж замирает, анимации не идут. Так и получается паузf
         ShowMenu();
 
         // Сначала запоминаем, каким был курсор, и только потом меняем его,
@@ -78,7 +79,7 @@ public class inventory : MonoBehaviour
     {
         IsPaused = false;
 
-        // Возвращаем 1 — обычную скорость времени, чтобы снять паузу
+        // Возвращаем 1 — обычную скорость времени, чтобы снять паузуwwwwww
         Time.timeScale = 1f;
         HideMenu();
 
@@ -91,6 +92,7 @@ public class inventory : MonoBehaviour
     {
         // Сначала снимаем паузу: если этого не сделать, новая сцена
         // загрузится с остановленным временем (timeScale остался бы 0)
+        Time.timeScale = 1f;
         Resume();
 
         // buildIndex — это номер текущей сцены. Загружаем её же заново —
