@@ -14,14 +14,13 @@ public class durability_object : MonoBehaviour
     public void TakeDamage(float damage)
     {
         current_durability -= damage;
+        Debug.Log($"Объект {gameObject} получил {damage} урона");
         if (current_durability <= 0)
         {
             Break();
         }
 
     }
-
-
     
     private void Break()
     {

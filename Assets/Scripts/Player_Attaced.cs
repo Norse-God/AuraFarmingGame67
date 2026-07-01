@@ -8,7 +8,7 @@ public class Player_Attaced : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)){
+        if (Input.GetMouseButtonDown(0)){
             Hit_find();
         }
     }
@@ -25,7 +25,6 @@ public class Player_Attaced : MonoBehaviour
             if (obj != null)
             {
                 obj.TakeDamage(Damage);
-                Debug.DrawLine(point.position, hit.point, Color.green);
             }
         }
 

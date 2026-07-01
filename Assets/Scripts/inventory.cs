@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class inventory : MonoBehaviour
 {
     public static bool IsPaused;
-
     // Сюда в инспекторе перетаскиваем объект меню (тёмный фон с кнопками),
     // чтобы скрипт знал, что именно показывать и прятать
     public GameObject menuRoot;
