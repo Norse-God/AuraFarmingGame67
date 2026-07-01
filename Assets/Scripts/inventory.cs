@@ -10,6 +10,8 @@ public class inventory : MonoBehaviour
     // Сюда в инспекторе перетаскиваем объект меню (тёмный фон с кнопками),
     // чтобы скрипт знал, что именно показывать и прятать
     public GameObject menuRoot;
+    public List<item> items = new();
+    public List<InventorySlot> slots;
 
     // Когда мы прячем курсор в игре (как в шутерах), нужно запомнить,
     // каким он был. Иначе после паузы не сможем вернуть всё как было
@@ -36,6 +38,18 @@ public class inventory : MonoBehaviour
             else
             {
                 Pause();
+            }
+        }
+    }
+
+    public void add(item item)
+    {
+        for(int i = 0;i < slots.Count; i++)
+        {
+            if (slots[i].item != null)
+            {
+                slots[i].AddItem(item);
+                items.Add(item); 
             }
         }
     }
