@@ -3,7 +3,7 @@ using UnityEngine;
 public class durability_object : MonoBehaviour
 {
 
-    private float max_durability = 100;
+    public float max_durability = 100;
     private float current_durability;
 
     void Start()

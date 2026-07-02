@@ -11632,6 +11632,7 @@ GameObject:
   - component: {fileID: 937429175}
   - component: {fileID: 937429174}
   - component: {fileID: 937429178}
+  - component: {fileID: 937429179}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -11781,6 +11782,25 @@ PlayableDirector:
     m_References:
     - 2380b371c7b368f42b332925ce1d01d5: {fileID: 937429173}
     - 0c33ef6e7b4b15b4ebdfe6fe0831eb72: {fileID: 686148136}
+--- !u!114 &937429179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937429173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd0e295dd9c4a14bbdae1bd690a5b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cinematic_Controller
+  dollyCamera: {fileID: 937429176}
+  dolly: {fileID: 937429175}
+  gameplayCamera: {fileID: 686148137}
+  flightDuration: 12
+  skipKey: 32
+  activePriority: 20
+  idlePriority: 0
 --- !u!1001 &942665882
 PrefabInstance:
   m_ObjectHideFlags: 0
