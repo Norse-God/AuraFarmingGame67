@@ -43,14 +43,14 @@ public class inventory : MonoBehaviour
         }
     }
 
-    public void add(item item)
+    public void add(item itemm)
     {
         for(int i = 0;i < slots.Count; i++)
         {
             if (slots[i].item != null)
             {
-                slots[i].AddItem(item);
-                items.Add(item); 
+                slots[i].AddItem(itemm);
+                items.Add(itemm); 
             }
         }
     }
