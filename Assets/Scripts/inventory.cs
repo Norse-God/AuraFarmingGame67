@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,13 +12,12 @@ public class inventory : MonoBehaviour
     // чтобы скрипт знал, что именно показывать и прятать
 
     public GameObject menuRoot;
-    public List<item> items = new();
-    public List<InventorySlot> slots;
 
     // Когда мы прячем курсор в игре (как в шутерах), нужно запомнить,
     // каким он был. Иначе после паузы не сможем вернуть всё как было
     private CursorLockMode cursorLockBeforePause;
     private bool cursorVisibleBeforePause;
+
 
     private void Awake()
     {
@@ -43,18 +43,6 @@ public class inventory : MonoBehaviour
         }
     }
 
-    public void add(item itemm)
-    {
-        for(int i = 0;i < slots.Count; i++)
-        {
-            if (slots[i].item != null)
-            {
-                slots[i].AddItem(itemm);
-                items.Add(itemm); 
-            }
-        }
-    }
-
     public void Pause()
     {
         IsPaused = true;
@@ -71,8 +59,8 @@ public class inventory : MonoBehaviour
 
         // В меню нужно мышкой нажимать кнопки, поэтому курсор
         // освобождаем (None) и делаем видимым
-        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Resume()
@@ -84,8 +72,8 @@ public class inventory : MonoBehaviour
         HideMenu();
 
         // Ставим курсор обратно таким, каким он был до паузы
-        Cursor.lockState = cursorLockBeforePause;
-        Cursor.visible = cursorVisibleBeforePause;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Restart()

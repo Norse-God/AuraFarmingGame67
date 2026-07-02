@@ -7,7 +7,6 @@ public class person_Camera : MonoBehaviour
     public GameObject player_model2;
     public Transform tr;
     public float mousesensitivity = 120f;
-    public GameObject menu;
 
 
     private float xRotation = 0f;
@@ -23,13 +22,12 @@ public class person_Camera : MonoBehaviour
 
     public void Update()
     {
-        if (menu.activeSelf)
+        if (inventory.IsPaused)
         {
-            Cursor.lockState = CursorLockMode.None;
+            return;
         }
-        else {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+
+
         player_model1.GetComponent<SkinnedMeshRenderer>().enabled = false;
         player_model2.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
