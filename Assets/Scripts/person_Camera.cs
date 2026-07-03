@@ -22,12 +22,6 @@ public class person_Camera : MonoBehaviour
 
     public void Update()
     {
-        if (inventory.IsPaused)
-        {
-            return;
-        }
-
-
         player_model1.GetComponent<SkinnedMeshRenderer>().enabled = false;
         player_model2.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
