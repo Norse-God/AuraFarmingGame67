@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   Name: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 23dd622819e48de4fb2b6ab5937acc12, type: 3}
   prefab: {fileID: 0}
   stackMax: 0
